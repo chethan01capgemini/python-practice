@@ -1,0 +1,27 @@
+Core Python Concepts
+
+"Introduction to Python Language:
+
+
+Python Features and Applications
+> Easy to Learn and Use
+
+> Interpreted Language: line by execution use to help debugging 
+
+>Easy to Learn and Use: Python's syntax is simple and resembles natural language, making it accessible for beginners.
+
+>Interpreted Language: Python code is executed line by line, which aids in debugging and development.
+
+>Dynamically Typed: Variables in Python do not require explicit declaration, allowing for flexibility in coding.
+
+>Extensive Libraries: Python has a vast collection of libraries and frameworks (e.g., NumPy, Pandas, Django) that simplify complex tasks.
+
+>Community Support: A large and active community contributes to a wealth of resources and documentation.
+
+>Versatile Applications: Used in web development, data analysis, artificial intelligence, machine learning, automation, scientific computing, and more.
+
+Hello World Program in Python:
+print('hello word')
+
+Integrated Development Environments (IDEs) for Python:
+vscode, jupiter
