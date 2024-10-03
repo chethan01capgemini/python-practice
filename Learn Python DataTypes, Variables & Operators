@@ -1,0 +1,93 @@
+Data Types and Variables in Python
+Data Types
+•	Numeric Types:
+	int: Integer values (e.g., 10, -5).
+	float: Floating-point numbers (e.g., 3.14, -0.001).
+	complex: Complex numbers with real and imaginary parts (e.g., 3 + 4j).
+•	Sequence Types:
+	str: String, a sequence of characters (e.g., "Hello").
+	list: Ordered, mutable collection (e.g., [1, 2, 3]).
+	tuple: Ordered, immutable collection (e.g., (1, 2, 3)).
+•	Mapping Type:
+	dict: Key-value pairs (e.g., {"name": "Alice", "age": 30}).
+•	Set Types:
+	set: Unordered collection of unique elements (e.g., {1, 2, 3}).
+	frozenset: Immutable version of a set.
+•	Boolean Type:
+	bool: Represents True or False.
+Variables
+•	Variable Declaration: Variables are created by assigning a value using the = operator.
+python
+Copy code
+x = 5  # integer
+name = "Alice"  # string
+•	Naming Rules:
+	Must start with a letter or underscore.
+	Can contain letters, numbers, and underscores.
+	Case-sensitive (e.g., var and Var are different).
+Global and Local Variables in Python
+•	Local Variables: Defined within a function and can only be accessed inside that function.
+python
+Copy code
+def my_function():
+    local_var = 10
+    print(local_var)
+•	Global Variables: Defined outside any function and accessible from any function.
+python
+Copy code
+global_var = 20
+
+def my_function():
+    print(global_var)
+•	Using global keyword: To modify a global variable inside a function.
+python
+Copy code
+def my_function():
+    global global_var
+    global_var = 30
+Operators in Python
+•	Arithmetic Operators:
+	+ (Addition), - (Subtraction), * (Multiplication), / (Division), // (Floor Division), % (Modulus), ** (Exponentiation).
+•	Comparison Operators:
+	==, !=, >, <, >=, <=.
+•	Logical Operators:
+	and, or, not.
+•	Assignment Operators:
+	=, +=, -=, *=, /=, etc.
+•	Bitwise Operators:
+	&, |, ^, ~, <<, >>.
+•	Membership Operators:
+	in, not in.
+•	Identity Operators:
+  is, is not.
+Command Line Arguments
+•	Command line arguments allow users to pass values to a Python script at runtime.
+•	Accessed via the sys module:
+python
+Copy code
+import sys
+
+print("Script name:", sys.argv[0])  # Script name
+print("Arguments:", sys.argv[1:])    # Arguments passed
+•	Run a script with arguments from the command line:
+bash
+Copy code
+python script.py arg1 arg2
+Output Statements
+•	Using print(): The primary function for output in Python.
+	Print multiple items:
+python
+Copy code
+print("Hello,", "World!")
+	Format output using f-strings (Python 3.6+):
+python
+Copy code
+name = "Alice"
+age = 30
+print(f"{name} is {age} years old.")
+•	Using format() method:
+python
+Copy code
+print("{} is {} years old.".format(name, age))
+These notes cover the fundamental concepts of data types, variables, operators, command line arguments, and output statements in Python. Let me know if you’d like more details on any specific area!
+
