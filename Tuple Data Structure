@@ -1,0 +1,94 @@
+What is a Tuple?
+A tuple is a data structure in many programming languages (e.g., Python) that stores an ordered collection of items, just like a list. However, unlike lists, tuples are immutable, meaning once a tuple is created, its elements cannot be modified, added, or removed.
+
+1. Tuple Creation
+You can create a tuple by placing elements inside parentheses () and separating them with commas. If there’s only one element in a tuple, a trailing comma is needed.
+
+Examples:
+
+# Creating an empty tuple
+empty_tuple = ()
+
+# Creating a tuple with multiple elements
+tuple1 = (1, 2, 3)
+
+# Tuple with mixed data types
+mixed_tuple = (1, "hello", 3.14)
+
+# Single element tuple (note the trailing comma)
+single_tuple = (1,)
+2. Accessing Elements of a Tuple
+You can access elements of a tuple using indexing and slicing, just like lists. Tuple indices also start from 0.
+
+Examples:
+
+tuple1 = (10, 20, 30, 40)
+
+# Accessing a single element
+print(tuple1[1])  # Output: 20
+
+# Accessing elements using negative indexing
+print(tuple1[-1])  # Output: 40
+
+# Slicing a tuple (start:end:step)
+print(tuple1[1:3])  # Output: (20, 30)
+print(tuple1[::2])  # Output: (10, 30)
+
+3. Tuple vs Immutability
+Unlike lists, tuples are immutable, meaning their contents cannot be changed after they are created. This immutability makes tuples more memory-efficient and faster for operations that don’t require modification.
+
+Example:
+
+
+tuple1 = (1, 2, 3)
+# Trying to modify the element will result in an error
+# tuple1[0] = 10  # Raises a TypeError
+
+# However, you can create a new tuple by concatenating existing ones
+new_tuple = tuple1 + (4, 5)
+print(new_tuple)  # Output: (1, 2, 3, 4, 5)
+4. Important Functions of Tuple
+Although tuples are immutable, there are still several built-in functions that you can use with them:
+
+len(): Returns the length of the tuple.
+
+
+tuple1 = (1, 2, 3)
+print(len(tuple1))  # Output: 3
+count(): Returns the number of occurrences of a specific element.
+
+
+tuple1 = (1, 2, 2, 3)
+print(tuple1.count(2))  # Output: 2
+index(): Returns the index of the first occurrence of an element.
+
+
+tuple1 = (10, 20, 30)
+print(tuple1.index(20))  # Output: 1
+max() and min(): Returns the largest and smallest item in a tuple.
+
+tuple1 = (1, 2, 3)
+print(max(tuple1))  # Output: 3
+print(min(tuple1))  # Output: 1
+sum(): Returns the sum of the elements in a tuple (only applicable for numeric elements).
+
+
+tuple1 = (1, 2, 3)
+print(sum(tuple1))  # Output: 6
+sorted(): Returns a sorted list of the tuple elements.
+
+
+tuple1 = (3, 1, 2)
+print(sorted(tuple1))  # Output: [1, 2, 3]
+5. Tuple Comprehensions (Tuple Generator)
+Unlike lists, tuple comprehensions do not exist directly in Python. However, you can create tuples using generator expressions, which resemble list comprehensions but use parentheses instead of square brackets. These generators can be converted into tuples using the tuple() function.
+
+Example:
+
+
+# Creating a tuple of squares using a generator
+squares_generator = (x**2 for x in range(5))
+squares_tuple = tuple(squares_generator)
+print(squares_tuple)  # Output: (0, 1, 4, 9, 16)
+
+6. Practice Tuple Collection
