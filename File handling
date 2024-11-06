@@ -22,3 +22,100 @@ myFile.close()
 myFile = open('myfile.txt', 'r+')
 text = myFile.read(100)
 print(text)
+
+from pathlib import Path
+file_path=Path("bab.txt")
+if file_path.exists():
+    print("the file exist")
+else:
+    print("file not exist")
+
+3)To read and write csv file 
+csv reader and writer operation
+import csv
+data=[["name","age","year"],
+      ["deva","23","2001"],
+      ["x","22","2002"],
+      ["y","30","1995"]]
+with open("studen.csv",mode="w",newline="") as file:
+    writer=csv.writer(file)
+    writer.writerows(data)
+    
+To read a csv file
+import csv
+with open("studen.csv",mode="r") as file:
+    reader=csv.reader(file)
+    header=next(reader) # this method reads the header
+    print(header,"\n")
+    for word in reader:
+        print(word)
+
+4)Handling csv files with dict
+import csv
+ex-
+data = [
+    {"Name": "Alice", "Age": 30, "City": "New York"},
+    {"Name": "Bob", "Age": 25, "City": "Los Angeles"},
+    {"Name": "Charlie", "Age": 35, "City": "Chicago"}
+]
+with open('studen.csv', mode='w',newline="") as file:
+    feildname=["Name","Age","City"]
+    csv_reader = csv.DictWriter(file,fieldnames=feildname)
+    csv_reader.writeheader()
+    csv_reader.writerows(data)
+    
+Dealing with zipfiles
+write mode operation
+import zipfile
+with zipfile.ZipFile("abc.zip","w") as zipf:
+    zipf.write("hello.txt")
+    zipf.write("abc.txt")
+
+Read Mode
+import zipfile
+with zipfile>zipFile("abc.zip","r") as zipf:
+       zipf.extractall("extarctedzip")
+
+pickling and pickling of objects
+pickling - serializing the objects in a file
+unpickling - deserializing the objects in a file
+to do this we need a module called pickle
+i)#pickling
+ex- 
+import pickle
+obj=["yash","prabhas","vijay","deva"]
+obj1=["yash","prabhas","vijay","deva"]
+with open("file.pkl","wb") as pkl:
+   pickle.dump(obj,pkl)
+   pickle.dump(obj1,pkl)
+
+#here "wb" is a write binary
+
+ii)desirializing file or unpickling the objects
+
+import pickle
+obj=["yash","prabhas","vijay","deva"]
+obj1=["yash","prabhas","vijay","deva"]
+with open("file.pkl","rb") as pkl:
+   a=pickle.load(pkl)
+   print(a)
+#here "rb" is read binary
+
+working with directories
+#make a directory using the makedirs() method
+import os
+os.makedirs("new_folder")
+
+#to change directory use the method chdir()
+os.chdir("new_folder")
+print("Current working directory:", os.getcwd())  # Prints the current directory
+
+#using listdir() method to list directories and files
+print(os.listdir())#if it is current directory
+print(os.listdir("new_folder"))#if the directory is diffrent
+
+#to check whether directory exist or not path.isdir() method in os
+if os.path.isdir("new_folder"):
+    print("Directory exists")
+else:
+    print("Directory does not exist")
