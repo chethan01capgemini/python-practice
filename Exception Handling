@@ -1,0 +1,64 @@
+i)Syntax error : when the code does not meet the python's grametical rule is called syntax error
+ex - 
+a=10
+if(a<10)
+  print("it is greater than 10")
+#so if observe above code where in if condition there is no colon after the if condtion 
+#so it raises sytax error
+
+ii)Type error - it occurs due to addition of diffrent kind of type like str and int
+ex - 
+a=10
+b="devara"
+print(a+b)
+#output - type error
+
+iii)Name error - if you are trying to acces a variable or functionit does not exist then u get name error
+ex - 
+myname="devaraja"
+print(mynam)
+#output - NameError - 
+
+iv)IndexError - if ur trying to acces objects which is out of from the objects length.here objects
+in the sense it might be list, or set
+ex - 
+animal=["lion","ant","dog","tiger"]
+print(animal[3])
+print(animal[5])
+#output IndexError - list index out of range
+
+v)ValueError - if ur trying to convert diffrent type of value some other type.like converting str to int or float
+ex - 
+a="def"
+b=int(a)
+print(b)
+#output - ValueError 
+
+vi)IOError - input output error
+ex - 
+try:
+    with open("hello.py", "r") as f:
+        content = f.read()
+except IOError:
+    print("The file you are trying to access does not exist")
+#output - IOError: [Errno 2] No such file or directory: 'hello.py'
+
+vii)import error - while ur tyring to acces the file or module which does not exist
+import kbc
+k=10
+print(kbc.k)
+
+so how to handle these things i have the way tp ahdnle these things
+so the synatx for this is
+ex - 
+try : 
+    a=10
+    b=21
+    c="we"
+    print(a+b+c)
+except TypeError :
+    print("u can't string and int values")
+else:
+    print("The above code has no error")
+finally :
+    print("all okay")
