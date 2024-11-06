@@ -1,0 +1,191 @@
+* A class is a blueprint or template for creating objects. It defines the attributes (data) and methods (behavior) that the objects created from it can have.
+
+class Car:
+    # Class attribute
+    wheels = 4
+
+    def __init__(self, brand, color):
+        # Instance attributes
+        self.brand = brand
+        self.color = color
+
+    def drive(self):
+        print(f"{self.color} {self.brand} is driving")
+
+* An object is an instance of a class. It has attributes and behaviors defined by the class.
+
+car1 = Car("Toyota", "Red")
+car1.drive()  # Red Toyota is driving
+
+* self represents the instance of the class. It allows access to the attributes and methods of the class in Python.
+
+class Dog:
+    def __init__(self, name):
+        self.name = name  # self.name refers to the instance's name attribute.
+
+* Constructor Concept
+The __init__ method is a constructor in Python. It’s called automatically when a new object of the class is created, and it initializes the object’s attributes.
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+Types of Variables
+Instance Variables: Unique to each object, defined in __init__.
+Static/Class Variables: Shared among all instances of a class, defined outside __init__.
+Local Variables: Defined inside a method and only accessible within that method.
+
+class Example:
+    class_variable = "I am a class variable"
+
+    def __init__(self, instance_variable):
+        self.instance_variable = instance_variable  # Instance variable
+
+* Types of Methods
+* Instance Methods: Access and modify instance variables. They use self.
+* Static Methods: Defined with @staticmethod decorator. They don’t access instance or class data.
+* Class Methods: Defined with @classmethod decorator. They have access to the class variable and take cls as a parameter.
+
+class MyClass:
+    def instance_method(self):
+        pass  # Instance method
+
+    @staticmethod
+    def static_method():
+        pass  # Static method
+
+    @classmethod
+    def class_method(cls):
+        pass  # Class method
+
+*  Setter and Getter Methods
+Setter and getter methods are used to access and modify private instance variables.
+
+python
+
+
+class Account:
+    def __init__(self, balance):
+        self._balance = balance  # Private variable
+
+    def get_balance(self):
+        return self._balance  # Getter
+
+    def set_balance(self, balance):
+        self._balance = balance  # Setter
+
+Inner Classes
+An inner class is defined within another class. They are often used when a class logically belongs to another class.
+
+class Outer:
+    class Inner:
+        def display(self):
+            print("Inner class method")
+
+Garbage Collection
+Python automatically frees memory when an object is no longer in use. The garbage collector identifies and deletes unused objects.
+
+Destructors
+The __del__ method in Python is a destructor. It’s called when an object is about to be destroyed.
+
+python
+
+class Example:
+    def __del__(self):
+        print("Object is being deleted")
+
+Inheritance
+Inheritance allows one class to inherit attributes and methods from another class.
+
+python
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):  # Dog inherits from Animal
+    pass
+
+Types of Inheritance
+Single Inheritance: One class inherits from one superclass.
+Multiple Inheritance: A class inherits from more than one superclass.
+Multilevel Inheritance: A chain of inheritance where class A is inherited by B, and B is inherited by C.
+Hierarchical Inheritance: One class is a parent to multiple subclasses.
+Hybrid Inheritance: A combination of two or more types of inheritance.
+13. Super()
+The super() function is used to call methods of a parent class from a child class.
+
+
+class Animal:
+    def __init__(self):
+        print("Animal created")
+
+class Dog(Animal):
+    def __init__(self):
+        super().__init__()  # Calls Animal's constructor
+        print("Dog created")
+14. Polymorphism
+Polymorphism allows methods to have the same name but behave differently in different classes.
+
+
+class Cat:
+    def sound(self):
+        print("Meow")
+
+class Dog:
+    def sound(self):
+        print("Bark")
+
+for animal in (Cat(), Dog()):
+    animal.sound()  # Different behavior based on object
+15. Overloading
+Python doesn’t directly support method overloading, but it can be mimicked by default or variable arguments.
+
+python
+Copy code
+class Example:
+    def add(self, a, b=0):  # Default argument for overloading effect
+        return a + b
+16. Overriding
+Method overriding allows a subclass to provide a specific implementation of a method already defined in its superclass.
+
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def speak(self):  # Overriding speak method
+        print("Dog barks")
+17. Abstract Method
+An abstract method is a method that has no implementation in the parent class and must be overridden in the child class.
+
+
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def sound(self):
+        pass
+18. Abstract Class
+An abstract class contains one or more abstract methods and can’t be instantiated.
+
+
+class Vehicle(ABC):
+    @abstractmethod
+    def start_engine(self):
+        pass
+
+19. Interface
+An interface in Python is generally created using abstract classes. It defines methods that subclasses must implement but doesn’t provide the actual implementation.
+
+
+class Flyable(ABC):
+    @abstractmethod
+    def fly(self):
+        pass
+
+
+
+
+
+
