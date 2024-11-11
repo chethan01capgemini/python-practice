@@ -1,0 +1,113 @@
+1. Regular Expressions
+Definition: Regular expressions (regex) are sequences of characters that define a search pattern. They are used for string searching and manipulation, allowing you to validate, search, and replace text based on specific patterns.
+
+re.match(): Determines if the regular expression matches at the beginning of a string.
+re.search(): Searches the string for a match anywhere in the string.
+re.findall(): Returns a list of all matches found in the string.
+re.sub(): Replaces occurrences of a pattern with a specified string.
+Example:
+
+code
+import re
+
+pattern = r'\d+'  # Matches one or more digits
+text = "There are 123 apples and 456 oranges."
+
+matches = re.findall(pattern, text)
+print(matches)  # Output: ['123', '456']
+
+2. Decorator Functions
+Definition: Decorators are functions that modify the behavior of another function or method. They are often used for logging, enforcing access control, instrumentation, or caching.
+
+Syntax: A decorator is applied to a function using the @decorator_name syntax.
+
+code:
+def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()
+Output:
+
+
+code:
+Something is happening before the function is called.
+Hello!
+Something is happening after the function is called.
+3. Generator Functions
+Definition: Generator functions are a type of iterable, like lists or tuples. Unlike lists, they do not store their contents in memory; instead, they generate items on the fly using the yield keyword. This makes them more memory-efficient for large datasets.
+
+code:
+def count_up_to(n):
+    count = 1
+    while count <= n:
+        yield count
+        count += 1
+
+counter = count_up_to(5)
+for number in counter:
+    print(number)  # Output: 1, 2, 3, 4, 5
+4. Debugging and Logging in Python
+Debugging: Debugging is the process of identifying and removing errors from computer software. Python provides several tools and techniques for debugging, including:
+
+Print statements: Simple but effective for tracing execution flow.
+pdb module: The built-in Python debugger that allows you to set breakpoints, step through code, and inspect variables.
+Example using pdb:
+
+code:
+import pdb
+
+def add(a, b):
+    pdb.set_trace()  # Set a breakpoint
+    return a + b
+
+result = add(2, 3)
+print(result)
+Logging: The logging module in Python is used to log messages that can help in monitoring and debugging applications. You can log messages at different severity levels (DEBUG, INFO, WARNING, ERROR, CRITICAL).
+
+Example:
+
+code:
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+
+logging.debug("This is a debug message.")
+logging.info("This is an info message.")
+logging.warning("This is a warning message.")
+logging.error("This is an error message.")
+logging.critical("This is a critical message.")
+5. Python Unit Testing
+Definition: Unit testing is a software testing technique where individual components of a program are tested in isolation. In Python, the unittest framework is commonly used for this purpose.
+
+Key Concepts:
+
+Test Case: A single unit of testing.
+Test Suite: A collection of test cases.
+Test Runner: A component that runs the tests and reports the results.
+Example:
+
+code:
+import unittest
+
+def add(a, b):
+    return a + b
+
+class TestMathOperations(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(1, 2), 3)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertEqual(add(-1, -1), -2)
+
+if __name__ == '__main__':
+    unittest.main()
+Running this code will execute the tests defined in TestMathOperations and report the results.
+
+This overview provides a concise explanation of each topic, along with examples to illustrate their usage in Python. If you have any specific questions or need further details on any of these topics, feel free to ask!
