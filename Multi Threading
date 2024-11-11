@@ -1,0 +1,91 @@
+1. What is Exception Handling?
+Answer: Exception handling in Python is a mechanism that allows programs to manage unexpected situations or errors (known as exceptions) that arise during execution. It helps prevent the program from crashing and provides a way to handle errors gracefully.
+
+2. Syntax Error
+Answer: A syntax error occurs when the code violates the grammatical rules of Python. These errors are detected by the Python interpreter during the parsing phase, before execution begins. Unlike runtime errors, syntax errors prevent the code from running at all.
+
+Example:
+
+Code:
+a = 10
+if a < 10  # Missing colon
+    print("It is greater than 10")
+Output: SyntaxError: expected ':',
+
+3. Runtime Errors
+Answer: Runtime errors occur during the execution of a program. Unlike syntax errors, which prevent the program from starting, runtime errors can cause the program to stop abruptly if not handled. They often arise from invalid operations, memory issues, or incorrect user input.
+
+4. What is an Exception?
+Answer: An exception is an event that disrupts the normal flow of a program during execution. Exceptions typically occur when the program encounters unexpected situations, such as dividing by zero, accessing a non-existent file, or converting an invalid value. When an exception is raised, it can either terminate the program or be handled using exception handling techniques.
+
+5. Some Built-in Python Exceptions
+Here are some common built-in exceptions in Python:
+
+i) SyntaxError
+Occurs when the code does not conform to Python's grammatical rules. Example:
+
+code:
+a = 10
+if a < 10  # Missing colon
+    print("It is greater than 10")
+ii) TypeError
+Occurs when an operation or function is applied to an object of inappropriate type. Example:
+
+code:
+a = 10
+b = "devara"
+print(a + b)  # Raises TypeError
+iii) NameError
+Occurs when trying to access a variable or function that does not exist. Example:
+
+code:
+myname = "devaraja"
+print(mynam)  # Raises NameError
+iv) IndexError
+Occurs when trying to access an index that is out of range for a list or similar collection. Example:
+
+code:
+animal = ["lion", "ant", "dog", "tiger"]
+print(animal[3])  # Valid
+print(animal[5])  # Raises IndexError
+v) ValueError
+Occurs when trying to convert a value to a different type and the conversion fails. Example:
+
+code:
+a = "def"
+b = int(a)  # Raises ValueError
+vi) IOError (or OSError in Python 3)
+Occurs when an input/output operation fails, such as trying to open a non-existent file. Example:
+
+code:
+try:
+    with open("hello.py", "r") as f:
+        content = f.read()
+except IOError:
+    print("The file you are trying to access does not exist.")
+vii) ImportError
+Occurs when trying to import a module that does not exist. Example:
+
+code:
+import kbc  # Raises ImportError if 'kbc' does not exist
+6. Handling Exceptions
+You can handle exceptions using the try, except, else, and finally blocks. Here’s the syntax:
+
+code:
+try:
+    a = 10
+    b = 21
+    c = "we"
+    print(a + b + c)  # This will raise TypeError
+except TypeError:
+    print("You can't combine string and int values.")
+else:
+    print("The above code has no error.")
+finally:
+    print("All okay.")
+
+try: The code that may cause an exception is placed here.
+except: This block will execute if an exception occurs.
+else: This block runs if no exceptions were raised in the try block.
+finally: This block runs regardless of whether an exception occurred or not, typically used for cleanup actions.
+This structured approach provides a clear understanding of exception handling in Python, along with examples and explanations for each type of error.
